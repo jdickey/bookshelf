@@ -1,0 +1,3 @@
+project=bookshelf
+test=minitest
+template=erb
