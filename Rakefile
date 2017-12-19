@@ -2,6 +2,8 @@
 require 'rake'
 require 'hanami/rake_tasks'
 require 'rake/testtask'
+require 'flay'
+require 'flay_task'
 require 'flog'
 require 'flog_task'
 
@@ -15,6 +17,11 @@ Rake::TestTask.new do |t|
   t.warning = false
 end
 
+FlayTask.new do |t|
+  t.verbose = true
+  t.dirs = %w(apps lib)
+end
+
 FlogTask.new do |t|
   t.verbose = true
   t.threshold = 200 # default is 200
@@ -22,5 +29,5 @@ FlogTask.new do |t|
   t.dirs = %w(apps lib) # Look, Ma; no tests! Run the tool manually every so often for those.
 end
 
-task default: [:test, :flog]
+task default: [:test, :flog, :flay]
 task spec: :test
