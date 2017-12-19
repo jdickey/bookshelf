@@ -84,6 +84,28 @@ gem install ruby_parser -v 3.10.1
 gem install path_expander -v 1.0.2
 gem install flog -v 4.6.1
 
+# Static-analysis Gems and support - Flay
+
+# gem install sexp_processor -v 4.10.0
+# gem install ruby_parser -v 3.10.1
+gem install erubis -v 2.7.0
+# gem install path_expander -v 1.0.2
+gem install flay -v 2.10.0
+
+# Static-analysis Gems and support - Reek
+
+gem install thread_safe -v 0.3.6
+gem install descendants_tracker -v 0.0.4
+gem install axiom-types -v 0.1.1
+gem install coercible -v 1.0.0
+gem install equalizer -v 0.0.11
+gem install virtus -v 1.0.5
+gem install codeclimate-engine-rb -v 0.4.1
+gem install ast -v 2.3.0
+gem install parser -v 2.4.0.2
+gem install rainbow -v 2.2.2
+gem install reek -v 4.7.3
+
 gem cleanup
 
 # Bundle, only using locally-installed Gems and creating binstubs (by default

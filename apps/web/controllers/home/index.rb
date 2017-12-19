@@ -3,7 +3,7 @@ module Web::Controllers::Home
   class Index
     include Web::Action
 
-    def call(params)
+    def call(_params)
     end
   end
 end
