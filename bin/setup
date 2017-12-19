@@ -77,6 +77,13 @@ gem install hanami-view -v 1.1.0
 gem install hanami -v 1.1.0
 gem install hanami-model -v 1.1.0
 
+# Static-analysis Gems and support -- Flog
+
+gem install sexp_processor -v 4.10.0
+gem install ruby_parser -v 3.10.1
+gem install path_expander -v 1.0.2
+gem install flog -v 4.6.1
+
 gem cleanup
 
 # Bundle, only using locally-installed Gems and creating binstubs (by default

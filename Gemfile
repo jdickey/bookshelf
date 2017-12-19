@@ -13,6 +13,7 @@ group :development do
 end
 
 group :test, :development do
+  gem 'flog', '4.6.1'
   gem 'dotenv', '~> 2.0'
 end
 
