@@ -7,6 +7,7 @@ require 'flay_task'
 require 'flog'
 require 'flog_task'
 require 'reek/rake/task'
+require 'rubocop/rake_task'
 
 class FlogTask < Rake::TaskLib
   attr_accessor :methods_only
@@ -36,5 +37,18 @@ Reek::Rake::Task.new do |t|
   t.reek_opts = '--sort-by smelliness --no-progress  -s'
 end
 
-task default: [:test, :flog, :flay]
+RuboCop::RakeTask.new(:rubocop) do |task|
+  task.patterns = [
+    'apps/**/*.rb',
+    'lib/**/*.rb',
+    'spec/**/*.rb'
+  ]
+  task.formatters = ['simple', 'd']
+  task.fail_on_error = true
+  # task.options << '--rails'
+  task.options << '--config=.rubocop.yml'
+  task.options << '--display-cop-names'
+end
+
+task default: [:test, :flog, :flay, :reek, :rubocop]
 task spec: :test

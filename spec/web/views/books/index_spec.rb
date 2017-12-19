@@ -3,7 +3,9 @@ require_relative '../../../spec_helper'
 
 describe Web::Views::Books::Index do
   let(:exposures) { Hash[books: []] }
-  let(:template)  { Hanami::View::Template.new('apps/web/templates/books/index.html.erb') }
+  let(:template) do
+    Hanami::View::Template.new('apps/web/templates/books/index.html.erb')
+  end
   let(:view)      { Web::Views::Books::Index.new(template, exposures) }
   let(:rendered)  { view.render }
 
@@ -13,13 +15,16 @@ describe Web::Views::Books::Index do
 
   describe 'when there are no books' do
     it 'shows a placeholder message' do
-      rendered.must_include('<p class="placeholder">There are no books yet.</p>')
+      expected = '<p class="placeholder">There are no books yet.</p>'
+      rendered.must_include(expected)
     end
   end
 
   describe 'when there are books' do
-    let(:book1)     { Book.new(title: 'Refactoring', author: 'Martin Fowler') }
-    let(:book2)     { Book.new(title: 'Domain Driven Design', author: 'Eric Evans') }
+    let(:book1) { Book.new(title: 'Refactoring', author: 'Martin Fowler') }
+    let(:book2) do
+      Book.new(title: 'Domain Driven Design', author: 'Eric Evans')
+    end
     let(:exposures) { Hash[books: [book1, book2]] }
 
     it 'lists them all' do
@@ -29,7 +34,8 @@ describe Web::Views::Books::Index do
     end
 
     it 'hides the placeholder message' do
-      rendered.wont_include('<p class="placeholder">There are no books yet.</p>')
+      unexpected = '<p class="placeholder">There are no books yet.</p>'
+      rendered.wont_include(unexpected)
     end
   end
 end

@@ -2,7 +2,9 @@ require_relative '../../../spec_helper'
 
 describe Web::Views::Books::Create do
   let(:exposures) { Hash[foo: 'bar'] }
-  let(:template)  { Hanami::View::Template.new('apps/web/templates/books/create.html.erb') }
+  let(:template) do
+    Hanami::View::Template.new('apps/web/templates/books/create.html.erb')
+  end
   let(:view)      { Web::Views::Books::Create.new(template, exposures) }
   let(:rendered)  { view.render }
 
