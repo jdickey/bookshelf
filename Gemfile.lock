@@ -8,13 +8,13 @@ GEM
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
-    capybara (2.16.1)
+    capybara (2.17.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (>= 1.3.3)
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
-      xpath (~> 2.0)
+      xpath (>= 2.0, < 4.0)
     codeclimate-engine-rb (0.4.1)
       virtus (~> 1.0)
     coercible (1.0.0)
@@ -125,7 +125,7 @@ GEM
       mini_mime (>= 0.1.1)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
-    minitest (5.10.3)
+    minitest (5.11.1)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
     parallel (1.12.1)
@@ -166,7 +166,7 @@ GEM
       dry-types (~> 0.11.0)
       rom (~> 3.2, >= 3.2.2)
       sequel (~> 4.43)
-    rubocop (0.52.0)
+    rubocop (0.52.1)
       parallel (~> 1.10)
       parser (>= 2.4.0.2, < 3.0)
       powerpack (~> 0.1)
@@ -192,8 +192,8 @@ GEM
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
-    xpath (2.1.0)
-      nokogiri (~> 1.3)
+    xpath (3.0.0)
+      nokogiri (~> 1.8)
 
 PLATFORMS
   ruby
@@ -208,9 +208,9 @@ DEPENDENCIES
   minitest
   rake
   reek (= 4.7.3)
-  rubocop (= 0.52.0)
+  rubocop (= 0.52.1)
   shotgun
   sqlite3
 
 BUNDLED WITH
-   1.16.0
+   1.16.1
