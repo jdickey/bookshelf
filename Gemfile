@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rake'
 gem 'hanami',       '~> 1.1'
 gem 'hanami-model', '~> 1.1'
+gem 'puma',         '3.11.2'
 
 gem 'sqlite3'
 
@@ -23,8 +24,4 @@ end
 group :test do
   gem 'minitest'
   gem 'capybara'
-end
-
-group :production do
-  # gem 'puma'
 end
