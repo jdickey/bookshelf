@@ -1,20 +1,27 @@
 
 AllCops:
-  TargetRubyVersion: 2.4
+  TargetRubyVersion: 2.5
 
-# This is *temporary*; when we fix it, remember to update Reek config as well.
-Style/Documentation:
-  Exclude:
-    - apps/**/*.rb
-    - lib/bookshelf.rb
-    - spec/features_helper.rb
+Metrics/BlockLength:
+  Max: 300
+  Include:
+    - 'spec/**/*_spec.rb'
 
-# This is also *temporary*; Real Code&trade; sources should include the comment.
-Style/FrozenStringLiteralComment:
+Metrics/ModuleLength:
+  Max: 300
+  Include:
+    - 'spec/**/*_spec.rb'
+
+Style/CommentedKeyword:
   Enabled: false
 
-# It's likely that we'll eventually broaden this to include *all* specs.
-Metrics/BlockLength:
-  Exclude:
-    - apps/web/application.rb
-    - spec/**/*.rb
+# This silences 'Missing top-level class documentation comment.', which we
+# particularly want to do on (initially-)generated files.
+Style/Documentation:
+  Enabled: false
+  Include:
+    - 'apps/**/*.rb'
+    - 'lib/**/*.rb'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
