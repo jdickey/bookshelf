@@ -31,5 +31,21 @@ describe AddBook do
     it 'persists the book' do
       expect(result.book.id).wont_be :nil?
     end
+
+    describe 'persistence' do
+      let(:repo) do
+        ret = Object.new
+        def ret.create(attribs_in)
+          @attribs = OpenStruct.new({ id: 1 }.merge(attribs_in))
+        end
+        ret.class.class_eval { attr_reader :attribs }
+        ret
+      end
+
+      it 'persists the book' do
+        AddBook.new(repository: repo).call(attributes)
+        expect(repo.attribs.id).must_equal 1
+        end
+    end # describe 'persistence'
   end # describe 'good input'
 end

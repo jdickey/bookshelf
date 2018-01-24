@@ -7,11 +7,11 @@ class AddBook
 
   expose :book
 
-  def initialize
-    # set up the object
+  def initialize(repository: BookRepository.new)
+    @repository = repository
   end
 
   def call(book_attributes)
-    @book = BookRepository.new.create(book_attributes)
+    @book = @repository.create(book_attributes)
   end
 end
