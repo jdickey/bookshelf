@@ -45,7 +45,16 @@ describe AddBook do
       it 'persists the book' do
         AddBook.new(repository: repo).call(attributes)
         expect(repo.attribs.id).must_equal 1
-        end
+      end
     end # describe 'persistence'
+
+    describe 'sending email' do
+      it 'sends :deliver to the mailer' do
+        mailer = Minitest::Mock.new
+        mailer.expect :deliver, :return_value
+        AddBook.new(mailer: mailer).call(attributes)
+        mailer.verify
+      end
+    end # describe 'sending email'
   end # describe 'good input'
 end
