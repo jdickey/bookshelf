@@ -117,6 +117,14 @@ gem install ruby-progressbar -v 1.9.0
 gem install unicode-display_width -v 1.3.0
 gem install rubocop -v 0.52.1
 
+# pry-byebug
+
+gem install byebug -v 9.1.0
+gem install coderay -v 1.1.2
+gem install method_source -v 0.9.0
+gem install pry -v 0.11.3
+gem install pry-byebug -v 3.5.1
+
 #
 
 gem install puma -v 3.11.2
