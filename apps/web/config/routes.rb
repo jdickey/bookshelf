@@ -6,3 +6,6 @@
 
 root to: 'home#index'
 resources :books, only: %i[index new create]
+get '/dashboard', to: 'dashboard#index'
+post '/signup', to: 'signup#create'
+get '/dashboard', to: 'dashboard#index'
