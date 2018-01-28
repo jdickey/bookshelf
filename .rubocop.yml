@@ -22,6 +22,3 @@ Style/Documentation:
   Include:
     - 'apps/**/*.rb'
     - 'lib/**/*.rb'
-
-Style/FrozenStringLiteralComment:
-  Enabled: false
